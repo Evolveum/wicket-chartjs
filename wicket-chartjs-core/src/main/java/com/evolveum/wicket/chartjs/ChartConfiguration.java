@@ -28,8 +28,8 @@ public class ChartConfiguration implements Serializable {
         this.type = type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getType() {
+        return type;
     }
 
     public ChartData getData() {

@@ -21,20 +21,21 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.resource.PackageResourceReference;
 
-public class ChartJsPanel extends WebMarkupContainer {
+public class ChartJsPanel<T extends ChartConfiguration> extends WebMarkupContainer {
 
-    public ChartJsPanel(String id, IModel<ChartConfiguration> model) {
+    public ChartJsPanel(String id, IModel<T> model) {
         super(id, model);
     }
 
-    private IModel<ChartConfiguration> getModel() {
-        return (IModel<ChartConfiguration>) getDefaultModel();
+    private IModel<T> getModel() {
+        return (IModel<T>) getDefaultModel();
     }
 
-    private ChartConfiguration getModelObject() {
+    private T getModelObject() {
         return getModel() != null ? getModel().getObject() : null;
     }
 
@@ -48,9 +49,9 @@ public class ChartJsPanel extends WebMarkupContainer {
         }
 
         response.render(JavaScriptHeaderItem.forReference(new PackageResourceReference(ChartJsPanel.class,
-                "../../../webjars/chartjs/2.9.4/Chart.min.js")));
+                "../../../../webjars/chartjs/2.9.4/Chart.min.js")));
         response.render(CssReferenceHeaderItem.forReference(new PackageResourceReference(ChartJsPanel.class,
-                "../../../webjars/chartjs/2.9.4/Chart.min.css")));
+                "../../../../webjars/chartjs/2.9.4/Chart.min.css")));
 
 
         String script = "var ctx = document.getElementById('" + getMarkupId() + "');"

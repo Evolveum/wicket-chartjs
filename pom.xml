@@ -13,6 +13,67 @@
         <module>wicket-chartjs-examples</module>
     </modules>
 
+    <properties>
+        <webjars.chartjs.version>2.9.4</webjars.chartjs.version>
+        <wicket.version>8.6.0</wicket.version>
+        <jackson.version>2.12.1</jackson.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>evolveum-nexus</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.evolveum.com/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>evolveum-nexus</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.evolveum.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>evolveum</id>
+            <name>Evolveum Public Releases</name>
+            <url>https://nexus.evolveum.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>evolveum-snapshots</id>
+            <name>Evolveum Snapshots</name>
+            <url>https://nexus.evolveum.com/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>chartjs</artifactId>
+                <version>${webjars.chartjs.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket-core</artifactId>
+                <version>${wicket.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <resources>
             <resource>

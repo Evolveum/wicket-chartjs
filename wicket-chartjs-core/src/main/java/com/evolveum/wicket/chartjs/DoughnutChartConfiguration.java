@@ -13,20 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartLegendLabel implements Serializable {
+public class DoughnutChartConfiguration extends ChartConfiguration {
 
-    private Integer boxWidth = 40;
-
-    public Integer getBoxWidth() {
-        return boxWidth;
-    }
-
-    public void setBoxWidth(Integer boxWidth) {
-        this.boxWidth = boxWidth;
+    public DoughnutChartConfiguration() {
+        super("doughnut");
     }
 }

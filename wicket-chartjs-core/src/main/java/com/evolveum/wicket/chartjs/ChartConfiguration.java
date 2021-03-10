@@ -14,19 +14,38 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartAnimationOption implements Serializable {
+public class ChartConfiguration implements Serializable {
 
-    private Integer duration = 1000;
+    private String type;
+    private ChartData data;
+    private ChartOptions options;
 
-    public Integer getDuration() {
-        return duration;
+    ChartConfiguration(String type) {
+        this.type = type;
     }
 
-    public void setDuration(Integer duration) {
-        this.duration = duration;
+    public void setType(String type) {
+        this.type = type;
     }
+
+    public ChartData getData() {
+        return data;
+    }
+
+    public void setData(ChartData data) {
+        this.data = data;
+    }
+
+    public ChartOptions getOptions() {
+        return options;
+    }
+
+    public void setOptions(ChartOptions options) {
+        this.options = options;
+    }
+
 }

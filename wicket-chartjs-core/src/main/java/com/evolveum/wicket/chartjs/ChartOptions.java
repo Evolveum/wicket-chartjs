@@ -1,4 +1,4 @@
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 /*
  * Copyright (c) 2021 Evolveum
  *

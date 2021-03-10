@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs.example;
 
-import java.io.Serializable;
+import org.apache.wicket.Page;
+import org.apache.wicket.protocol.http.WebApplication;
 
-public class ChartTooltipOption implements Serializable {
+public class WicketAppication extends WebApplication {
 
-    private Boolean intersect = true;
+    public WicketAppication() {
 
-    public ChartTooltipOption(Boolean intersect) {
-        this.intersect = intersect;
     }
 
-    public Boolean getIntersect() {
-        return intersect;
-    }
-
-    public void setIntersect(Boolean intersect) {
-        this.intersect = intersect;
+    public Class<? extends Page> getHomePage() {
+        return HomePage.class;
     }
 }

@@ -14,30 +14,19 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
 
-public class ChartData implements Serializable {
+public class ChartAnimationOption implements Serializable {
 
-    private Collection<ChartDataset> datasets = new ArrayList<>();
-    private Collection<String> labels = new ArrayList<>();
+    private Integer duration = 1000;
 
-    public Collection<ChartDataset> getDatasets() {
-        return datasets;
+    public Integer getDuration() {
+        return duration;
     }
 
-    public void addDataset(ChartDataset dataset) {
-        datasets.add(dataset);
-    }
-
-    public Collection<String> getLabels() {
-        return labels;
-    }
-
-    public void addLabel(String label) {
-        labels.add(label);
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 }

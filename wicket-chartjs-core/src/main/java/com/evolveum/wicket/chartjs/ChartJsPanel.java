@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;

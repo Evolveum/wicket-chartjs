@@ -14,31 +14,15 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartLegendOption implements Serializable {
+public class ChartTitleOption implements Serializable {
 
-    private String position = "top";
-    private ChartLegendLabel labels;
     private Boolean display = true;
+    private Integer fontSize = 12;
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public ChartLegendLabel getLabels() {
-        return labels;
-    }
-
-    public void setLabels(ChartLegendLabel labels) {
-        this.labels = labels;
-    }
 
     public Boolean getDisplay() {
         return display;
@@ -46,5 +30,13 @@ public class ChartLegendOption implements Serializable {
 
     public void setDisplay(Boolean display) {
         this.display = display;
+    }
+
+    public Integer getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(Integer fontSize) {
+        this.fontSize = fontSize;
     }
 }

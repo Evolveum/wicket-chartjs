@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs.example;
+package com.evolveum.wicket.chartjs.example;
 
-import com.evolveum.chartjs.*;
+
+import com.evolveum.wicket.chartjs.*;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
@@ -35,8 +36,7 @@ public class HomePage extends WebPage {
 
             @Override
             protected ChartConfiguration load() {
-                ChartConfiguration config = new ChartConfiguration();
-                config.setType("doughnut");
+                DoughnutChartConfiguration config = new DoughnutChartConfiguration();
 
                 ChartOptions options = createChartOptions();
                 config.setOptions(options);

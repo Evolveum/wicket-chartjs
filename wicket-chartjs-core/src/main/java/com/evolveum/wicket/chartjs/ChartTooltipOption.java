@@ -14,29 +14,23 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartTitleOption implements Serializable {
+public class ChartTooltipOption implements Serializable {
 
-    private Boolean display = true;
-    private Integer fontSize = 12;
+    private Boolean intersect = true;
 
-
-    public Boolean getDisplay() {
-        return display;
+    public ChartTooltipOption(Boolean intersect) {
+        this.intersect = intersect;
     }
 
-    public void setDisplay(Boolean display) {
-        this.display = display;
+    public Boolean getIntersect() {
+        return intersect;
     }
 
-    public Integer getFontSize() {
-        return fontSize;
-    }
-
-    public void setFontSize(Integer fontSize) {
-        this.fontSize = fontSize;
+    public void setIntersect(Boolean intersect) {
+        this.intersect = intersect;
     }
 }

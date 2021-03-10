@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs.example;
+package com.evolveum.wicket.chartjs;
 
-import org.apache.wicket.Page;
-import org.apache.wicket.protocol.http.WebApplication;
+import java.io.Serializable;
 
-public class WicketAppication extends WebApplication {
+public class ChartLegendLabel implements Serializable {
 
-    public WicketAppication() {
+    private Integer boxWidth = 40;
 
+    public Integer getBoxWidth() {
+        return boxWidth;
     }
 
-    public Class<? extends Page> getHomePage() {
-        return HomePage.class;
+    public void setBoxWidth(Integer boxWidth) {
+        this.boxWidth = boxWidth;
     }
 }

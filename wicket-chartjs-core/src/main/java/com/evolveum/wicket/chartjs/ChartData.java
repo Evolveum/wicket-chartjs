@@ -14,38 +14,30 @@
  * limitations under the License.
  */
 
-package com.evolveum.chartjs;
+package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
-public class ChartConfiguration implements Serializable {
+public class ChartData implements Serializable {
 
-    private String type;
-    private ChartData data;
-    private ChartOptions options;
+    private Collection<ChartDataset> datasets = new ArrayList<>();
+    private Collection<String> labels = new ArrayList<>();
 
-    public String getType() {
-        return type;
+    public Collection<ChartDataset> getDatasets() {
+        return datasets;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void addDataset(ChartDataset dataset) {
+        datasets.add(dataset);
     }
 
-    public ChartData getData() {
-        return data;
+    public Collection<String> getLabels() {
+        return labels;
     }
 
-    public void setData(ChartData data) {
-        this.data = data;
+    public void addLabel(String label) {
+        labels.add(label);
     }
-
-    public ChartOptions getOptions() {
-        return options;
-    }
-
-    public void setOptions(ChartOptions options) {
-        this.options = options;
-    }
-
 }

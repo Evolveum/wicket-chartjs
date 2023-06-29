@@ -24,28 +24,57 @@ import org.apache.wicket.model.LoadableDetachableModel;
 
 public class HomePage extends WebPage {
 
-    public HomePage() {
-
-        IModel<ChartConfiguration> chartConfigModel = createChartModel();
-        ChartJsPanel panel = new ChartJsPanel("chart", chartConfigModel);
-        add(panel);
+    enum ChartType {
+        PIE, DOUGHOUT, BAR;
     }
 
-    private IModel<ChartConfiguration> createChartModel() {
-        return new LoadableDetachableModel<ChartConfiguration>() {
+    public HomePage() {
+
+        IModel<ChartConfiguration> doughnutChartConfigModel = createChartModel(ChartType.DOUGHOUT);
+        ChartJsPanel doughnutChart = new ChartJsPanel("doughnutChart", doughnutChartConfigModel);
+        add(doughnutChart);
+
+        IModel<ChartConfiguration> pieChartConfiguration = createChartModel(ChartType.PIE);
+        ChartJsPanel pieChart = new ChartJsPanel("pieChart", pieChartConfiguration);
+        add(pieChart);
+
+        IModel<ChartConfiguration> barChartConfiguration = createChartModel(ChartType.BAR);
+        ChartJsPanel barChart = new ChartJsPanel("barChart", barChartConfiguration);
+        add(barChart);
+    }
+
+    private IModel<ChartConfiguration> createChartModel(ChartType type) {
+        return new LoadableDetachableModel<>() {
 
             @Override
             protected ChartConfiguration load() {
-                DoughnutChartConfiguration config = new DoughnutChartConfiguration();
+                ChartConfiguration config;
+                switch (type) {
+                    case PIE:
+                        config = new PieChartConfiguration();
+                        break;
+                    case DOUGHOUT:
+                        config = new DoughnutChartConfiguration();
+                        break;
+                    case BAR:
+                        config = new BarChartConfiguration();
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Unknown chart type: " + type);
+                }
 
-                ChartOptions options = createChartOptions();
-                config.setOptions(options);
-
-                ChartData data = createChartData();
-                config.setData(data);
+                appendData(config);
                 return config;
             }
         };
+    }
+
+    private void appendData(ChartConfiguration config) {
+        ChartOptions options = createChartOptions();
+        config.setOptions(options);
+
+        ChartData data = createChartData();
+        config.setData(data);
     }
 
     private ChartOptions createChartOptions() {

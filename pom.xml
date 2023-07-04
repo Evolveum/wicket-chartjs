@@ -7,7 +7,7 @@
     <groupId>com.evolveum.chartjs</groupId>
     <artifactId>wicket-chartjs</artifactId>
     <packaging>pom</packaging>
-    <version>0.3</version>
+    <version>0.4-SNAPSHOT</version>
     <modules>
         <module>wicket-chartjs-core</module>
         <module>wicket-chartjs-examples</module>

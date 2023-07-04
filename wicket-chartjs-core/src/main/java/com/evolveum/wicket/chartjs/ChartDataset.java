@@ -25,6 +25,14 @@ public class ChartDataset implements Serializable {
     private Collection<Object> data = new ArrayList<Object>();
     private Collection<String> backgroundColor = new ArrayList<String>();
 
+    private Collection<String> borderColor = new ArrayList<String>();
+    private Integer borderWidth = 0;
+
+    /**
+     * used for bar chart
+     */
+    private String label;
+
     public Collection<Object> getData() {
         return data;
     }
@@ -39,5 +47,29 @@ public class ChartDataset implements Serializable {
 
     public void addBackgroudColor(String color) {
         backgroundColor.add(color);
+    }
+
+    public Collection<String> getBorderColor() {
+        return borderColor;
+    }
+
+    public void addBorderColor(String color) {
+        borderColor.add(color);
+    }
+
+    public Integer getBorderWidth() {
+        return borderWidth;
+    }
+
+    public void setBorderWidth(Integer borderWidth) {
+        this.borderWidth = borderWidth;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 }

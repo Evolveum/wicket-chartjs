@@ -71,10 +71,12 @@ public class HomePage extends WebPage {
 
     private void appendData(ChartConfiguration config) {
         ChartOptions options = createChartOptions();
+        options.setIndexAxis(IndexAxis.AXIS_Y.getValue());
         config.setOptions(options);
 
         ChartData data = createChartData();
         config.setData(data);
+
     }
 
     private ChartOptions createChartOptions() {
@@ -97,13 +99,15 @@ public class HomePage extends WebPage {
 
     private ChartDataset createDataSet() {
         ChartDataset dataset = new ChartDataset();
+        dataset.setLabel("Dataset 1");
+
         dataset.addBackgroudColor("Red");
         dataset.addBackgroudColor("Green");
         dataset.addBackgroudColor("Blue");
 
         dataset.addData(10);
         dataset.addData(20);
-        dataset.addData(30);
+        dataset.addData(3000);
 
         return dataset;
     }

@@ -24,6 +24,11 @@ public class ChartOptions implements Serializable {
     private ChartTitleOption title;
     private ChartTooltipOption tooltips;
 
+    /**
+     * used for bar chart
+     */
+    private String indexAxis;
+
     public ChartAnimationOption getAnimation() {
         return animation;
     }
@@ -54,5 +59,13 @@ public class ChartOptions implements Serializable {
 
     public void setTooltips(ChartTooltipOption tooltips) {
         this.tooltips = tooltips;
+    }
+
+    public void setIndexAxis(String indexAxis) {
+        this.indexAxis = indexAxis;
+    }
+
+    public String getIndexAxis() {
+        return indexAxis;
     }
 }

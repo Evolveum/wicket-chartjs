@@ -27,6 +27,7 @@ public class ChartDataset implements Serializable {
 
     private Collection<String> borderColor = new ArrayList<String>();
     private Integer borderWidth = 0;
+    private boolean fill = false;
 
     /**
      * used for bar chart
@@ -71,5 +72,13 @@ public class ChartDataset implements Serializable {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public boolean isFill() {
+        return fill;
+    }
+
+    public void setFill(boolean fill) {
+        this.fill = fill;
     }
 }

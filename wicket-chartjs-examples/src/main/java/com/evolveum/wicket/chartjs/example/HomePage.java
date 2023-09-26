@@ -25,7 +25,7 @@ import org.apache.wicket.model.LoadableDetachableModel;
 public class HomePage extends WebPage {
 
     enum ChartType {
-        PIE, DOUGHOUT, BAR;
+        PIE, DOUGHOUT, BAR, LINE;
     }
 
     public HomePage() {
@@ -41,6 +41,10 @@ public class HomePage extends WebPage {
         IModel<ChartConfiguration> barChartConfiguration = createChartModel(ChartType.BAR);
         ChartJsPanel barChart = new ChartJsPanel("barChart", barChartConfiguration);
         add(barChart);
+
+        IModel<ChartConfiguration> lineChartConfiguration = createChartModel(ChartType.LINE);
+        ChartJsPanel lineChart = new ChartJsPanel("lineChart", lineChartConfiguration);
+        add(lineChart);
     }
 
     private IModel<ChartConfiguration> createChartModel(ChartType type) {
@@ -58,6 +62,9 @@ public class HomePage extends WebPage {
                         break;
                     case BAR:
                         config = new BarChartConfiguration();
+                        break;
+                    case LINE:
+                        config = new LineChartConfiguration();
                         break;
                     default:
                         throw new IllegalArgumentException("Unknown chart type: " + type);
@@ -104,6 +111,8 @@ public class HomePage extends WebPage {
         dataset.addBackgroudColor("Red");
         dataset.addBackgroudColor("Green");
         dataset.addBackgroudColor("Blue");
+        dataset.setBorderWidth(1);
+        dataset.setFill(true);
 
         dataset.addData(10);
         dataset.addData(20);

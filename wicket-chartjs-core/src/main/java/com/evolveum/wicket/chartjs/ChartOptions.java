@@ -24,6 +24,8 @@ public class ChartOptions implements Serializable {
     private ChartTitleOption title;
     private ChartTooltipOption tooltips;
 
+    //Used for barChart
+    double barPercentage = 1;
     /**
      * used for bar chart
      */
@@ -67,5 +69,13 @@ public class ChartOptions implements Serializable {
 
     public String getIndexAxis() {
         return indexAxis;
+    }
+
+    public double getBarPercentage() {
+        return barPercentage;
+    }
+
+    public void setBarPercentage(double barPercentage) {
+        this.barPercentage = barPercentage;
     }
 }

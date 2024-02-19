@@ -70,17 +70,21 @@ public class HomePage extends WebPage {
                         throw new IllegalArgumentException("Unknown chart type: " + type);
                 }
 
-                appendData(config);
+                appendData(config, type);
                 return config;
             }
         };
     }
 
-    private void appendData(ChartConfiguration config) {
+    private void appendData(ChartConfiguration config, ChartType type) {
         ChartOptions options = createChartOptions();
         options.setIndexAxis(IndexAxis.AXIS_Y.getValue());
-        config.setOptions(options);
 
+        if(type == ChartType.BAR){
+            options.setBarPercentage(0.1);
+        }
+
+        config.setOptions(options);
         ChartData data = createChartData();
         config.setData(data);
 

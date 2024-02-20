@@ -53,7 +53,7 @@ podTemplate(
                             mvn --version
                         fi
 
-                        mvn -B -ntp -U clean install -DskipTests
+                        mvn -B -ntp -DskipTests clean ${params.SKIP_DEPLOY ? 'install' : 'deploy -DdeployAtEnd=true'}
                     """
                 }
             }

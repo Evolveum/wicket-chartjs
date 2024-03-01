@@ -47,7 +47,7 @@ podTemplate(
                         mkdir -p /root/.m2
                         ln -s ../jenkins-nexus/settings.xml /root/.m2/settings.xml
 
-                        mvn -B -ntp clean ${params.SKIP_DEPLOY ? 'install' : 'deploy'}
+                        mvn -B -ntp clean ${params.SKIP_DEPLOY ? 'install' : 'deploy -DdeployAtEnd=true'}
                     """
 
                     currentBuild.result = 'SUCCESS'

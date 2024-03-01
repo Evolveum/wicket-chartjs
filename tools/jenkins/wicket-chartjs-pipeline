@@ -27,10 +27,10 @@ podTemplate(
                         runAsUser: '0',
                         ttyEnabled: true,
                         command: 'cat',
-                        resourceRequestCpu: params.BUILDER_CPU ?: '4',
-                        resourceLimitCpu: params.BUILDER_CPU ?: '4',
-                        resourceRequestMemory: '4Gi',
-                        resourceLimitMemory: '4Gi')
+                        resourceRequestCpu: params.BUILDER_CPU ?: '2',
+                        resourceLimitCpu: params.BUILDER_CPU ?: '2',
+                        resourceRequestMemory: '1Gi',
+                        resourceLimitMemory: '1Gi')
         ]
 ) {
 
@@ -49,6 +49,8 @@ podTemplate(
 
                         mvn -B -ntp clean ${params.SKIP_DEPLOY ? 'install' : 'deploy'}
                     """
+
+                    currentBuild.result = 'SUCCESS'
                 }
             }
         } catch (Exception e) {

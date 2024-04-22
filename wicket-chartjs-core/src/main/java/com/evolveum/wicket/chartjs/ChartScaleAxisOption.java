@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Evolveum
+ * Copyright (c) 2024 Evolveum
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,19 @@ package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartTitleOption implements Serializable {
+public class ChartScaleAxisOption implements Serializable {
 
-    private Boolean display = true;
-    private Integer fontSize = 12;
-    private String text;
+    Boolean display;
+    Boolean stacked;
+    ChartTitleOption title;
+
+    public Boolean getStacked() {
+        return stacked;
+    }
+
+    public void setStacked(Boolean stacked) {
+        this.stacked = stacked;
+    }
 
     public Boolean getDisplay() {
         return display;
@@ -32,20 +40,12 @@ public class ChartTitleOption implements Serializable {
         this.display = display;
     }
 
-    public Integer getFontSize() {
-        return fontSize;
+    public ChartTitleOption getTitle() {
+        return title;
     }
 
-    public void setFontSize(Integer fontSize) {
-        this.fontSize = fontSize;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public void setTitle(ChartTitleOption title) {
+        this.title = title;
     }
 
 }

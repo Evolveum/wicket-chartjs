@@ -23,12 +23,14 @@ public class ChartOptions implements Serializable {
     private ChartLegendOption legend;
     private ChartTitleOption title;
     private ChartTooltipOption tooltips;
+    private ChartInteractionOption interaction;
+    private ChartScaleOption scales;
 
-    //Used for barChart
-    double barPercentage = 1;
     /**
      * used for bar chart
      */
+    double barPercentage = 1;
+
     private String indexAxis;
 
     public ChartAnimationOption getAnimation() {
@@ -77,5 +79,21 @@ public class ChartOptions implements Serializable {
 
     public void setBarPercentage(double barPercentage) {
         this.barPercentage = barPercentage;
+    }
+
+    public ChartScaleOption getScales() {
+        return scales;
+    }
+
+    public void setScales(ChartScaleOption scales) {
+        this.scales = scales;
+    }
+
+    public ChartInteractionOption getInteraction() {
+        return interaction;
+    }
+
+    public void setInteraction(ChartInteractionOption interaction) {
+        this.interaction = interaction;
     }
 }

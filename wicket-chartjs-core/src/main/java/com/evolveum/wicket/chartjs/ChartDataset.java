@@ -26,13 +26,14 @@ public class ChartDataset implements Serializable {
     private Collection<String> backgroundColor = new ArrayList<String>();
 
     private Collection<String> borderColor = new ArrayList<String>();
-    private Integer borderWidth = 0;
-    private boolean fill = false;
 
     /**
      * used for bar chart
      */
+    private Integer borderWidth = 0;
+    private boolean fill = false;
     private String label;
+    private String stack;
 
     public Collection<Object> getData() {
         return data;
@@ -80,5 +81,13 @@ public class ChartDataset implements Serializable {
 
     public void setFill(boolean fill) {
         this.fill = fill;
+    }
+
+    public String getStack() {
+        return stack;
+    }
+
+    public void setStack(String stack) {
+        this.stack = stack;
     }
 }

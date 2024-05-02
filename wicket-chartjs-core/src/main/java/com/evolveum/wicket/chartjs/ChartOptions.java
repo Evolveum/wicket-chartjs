@@ -25,6 +25,8 @@ public class ChartOptions implements Serializable {
     private ChartTooltipOption tooltips;
     private ChartInteractionOption interaction;
     private ChartScaleOption scales;
+    boolean maintainAspectRatio;
+    boolean responsive;
 
     /**
      * used for bar chart
@@ -95,5 +97,21 @@ public class ChartOptions implements Serializable {
 
     public void setInteraction(ChartInteractionOption interaction) {
         this.interaction = interaction;
+    }
+
+    public boolean isMaintainAspectRatio() {
+        return maintainAspectRatio;
+    }
+
+    public void setMaintainAspectRatio(boolean maintainAspectRatio) {
+        this.maintainAspectRatio = maintainAspectRatio;
+    }
+
+    public boolean isResponsive() {
+        return responsive;
+    }
+
+    public void setResponsive(boolean responsive) {
+        this.responsive = responsive;
     }
 }

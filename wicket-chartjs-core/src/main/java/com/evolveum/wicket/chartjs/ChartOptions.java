@@ -19,8 +19,10 @@ import java.io.Serializable;
 
 public class ChartOptions implements Serializable {
 
+    private ChartPluginsOption plugins;
+
     private ChartAnimationOption animation;
-    private ChartLegendOption legend;
+
     private ChartTitleOption title;
     private ChartTooltipOption tooltips;
     private ChartInteractionOption interaction;
@@ -43,12 +45,12 @@ public class ChartOptions implements Serializable {
         this.animation = animation;
     }
 
-    public ChartLegendOption getLegend() {
-        return legend;
+    public ChartPluginsOption getPlugins() {
+        return plugins;
     }
 
-    public void setLegend(ChartLegendOption legend) {
-        this.legend = legend;
+    public void setPlugins(ChartPluginsOption plugins) {
+        this.plugins = plugins;
     }
 
     public ChartTitleOption getTitle() {

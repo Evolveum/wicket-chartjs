@@ -49,12 +49,13 @@ public class ChartJsPanel<T extends ChartConfiguration> extends WebMarkupContain
         }
 
         response.render(JavaScriptHeaderItem.forReference(new PackageResourceReference(ChartJsPanel.class,
-                "../../../../webjars/chartjs/4.1.2/dist/chart.umd.js")));
+                "../../../../webjars/chartjs/4.4.3/dist/chart.umd.js")));
 //        response.render(CssReferenceHeaderItem.forReference(new PackageResourceReference(ChartJsPanel.class,
 //                "../../../../webjars/chartjs/4.1.2/Chart.min.css")));
 
 
-        String script = "var ctx = document.getElementById('" + getMarkupId() + "');"
+        String script =
+                "var ctx = document.getElementById('" + getMarkupId() + "');"
                 +       "const myLineChart" + getMarkupId() + " = new Chart(ctx, " + JsonMapper.toJson(config) + ");";
         response.render(OnDomReadyHeaderItem.forScript(script));
     }

@@ -94,7 +94,9 @@ public class HomePage extends WebPage {
         ChartOptions options = new ChartOptions();
 
         options.setAnimation(createAnimationOptions());
-        options.setLegend(createLegendOptions());
+        ChartPluginsOption plugins = new ChartPluginsOption();
+        plugins.setLegend(createLegendOptions());
+        options.setPlugins(plugins);
         options.setTitle(createTitleOptions());
         return options;
     }

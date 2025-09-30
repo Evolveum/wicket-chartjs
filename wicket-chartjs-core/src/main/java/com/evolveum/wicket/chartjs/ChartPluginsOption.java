@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Evolveum
+ * Copyright (c) 2025 Evolveum
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,33 +18,15 @@ package com.evolveum.wicket.chartjs;
 
 import java.io.Serializable;
 
-public class ChartConfiguration implements Serializable {
+public class ChartPluginsOption implements Serializable {
 
-    private String type;
-    private ChartData data;
-    private ChartOptions options;
+    private ChartLegendOption legend;
 
-    ChartConfiguration(String type) {
-        this.type = type;
+    public ChartLegendOption getLegend() {
+        return legend;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public ChartData getData() {
-        return data;
-    }
-
-    public void setData(ChartData data) {
-        this.data = data;
-    }
-
-    public ChartOptions getOptions() {
-        return options;
-    }
-
-    public void setOptions(ChartOptions options) {
-        this.options = options;
+    public void setLegend(ChartLegendOption legend) {
+        this.legend = legend;
     }
 }
